@@ -1,0 +1,4 @@
+.basket-wiget-container {
+  display: flex;
+  flex-direction: row;
+}
