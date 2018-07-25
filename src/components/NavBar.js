@@ -5,13 +5,16 @@ import "./NavBar.css";
 
 export default () => {
   return (
-    <div className="nav-container">
-      <div className="Logo">
-        whee <small>The most definitive shape store in the world</small>
+    <div>
+      <div className="nav-container">
+        <div className="logo">
+          whee <small>The most definitive shape store in the world</small>
+        </div>
+        <nav className="navigation">
+          <BasketWidget />
+        </nav>
       </div>
-      <nav className="navigation">
-        <BasketWidget />
-      </nav>
+      <div className="zig-zag" />
     </div>
   );
 };

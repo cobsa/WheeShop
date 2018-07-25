@@ -1,4 +1,40 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
 .nav-container {
   display: flex;
   justify-content: space-between;
+  background-color: $gradient-start;
+  padding: 5px;
+}
+
+.logo {
+  margin-left: 0.5em;
+  font-family: $Pacifico;
+  align-self: center;
+  font-size: 36pt;
+  small {
+    margin-left: 1em;
+    font-family: $Playfair;
+    font-size: 14pt;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+/* Zig-zag  */
+
+$height: 48px;
+
+.zig-zag {
+  background: linear-gradient(-45deg, transparent $height/2, $gradient-start 0),
+    linear-gradient(45deg, transparent $height/2, $gradient-start 0);
+  width: 100%;
+  background-repeat: repeat-x;
+  height: $height;
+  content: " ";
+  background-position: top left;
+  background-size: 11/16 * $height $height;
+  display: block;
 }

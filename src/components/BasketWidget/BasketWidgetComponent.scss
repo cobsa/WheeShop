@@ -12,6 +12,9 @@
   margin: auto 0;
   font-style: italic;
   font-family: $Playfair;
+  @media only screen and (max-width: 330px) {
+    display: none;
+  }
 }
 
 .basket-widget-svg-container {
