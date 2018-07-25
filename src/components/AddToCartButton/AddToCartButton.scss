@@ -1,0 +1,11 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
+.add-to-cart-button {
+  font-family: $Playfair;
+  font-size: 18px;
+  background-color: $gradient-end;
+  border: 1px $black solid;
+  padding: 0.5em 1.5em;
+  font-weight: bold;
+}

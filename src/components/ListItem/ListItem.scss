@@ -1,0 +1,42 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
+.list-item-container {
+  display: flex;
+  flex-direction: row;
+  font-family: $Playfair;
+}
+
+.divider {
+  margin: auto 32px;
+}
+
+.list-item-name {
+  font-size: 24pt;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.list-item-description {
+  font-size: 12pt;
+}
+
+.list-item-price {
+  font-size: 22pt;
+  text-align: end;
+  margin-bottom: 10px;
+}
+
+.list-item-svg {
+  svg {
+    height: 100px;
+    polygon,
+    rect,
+    circle {
+      fill: transparent;
+      stroke: $pink;
+      stroke-width: 1.5;
+    }
+  }
+}
