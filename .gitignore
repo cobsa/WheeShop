@@ -9,6 +9,11 @@
 # production
 /build
 
+
+# Remove .css files from source control since they are now build files
+
+src/**/*.css
+
 # misc
 .DS_Store
 .env.local
@@ -19,3 +24,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
