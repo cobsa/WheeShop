@@ -1,4 +1,17 @@
-.basket-wiget-container {
+.basket-widget-container {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+}
+
+.basket-widget-text {
+  font-size: 14pt;
+  line-height: 1.5;
+}
+
+.basket-widget-svg {
+  height: 2em;
+  display: inline-block;
+  margin-left: 10px;
+  fill: red;
 }
