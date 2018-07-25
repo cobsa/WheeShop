@@ -1,3 +1,6 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
 .basket-widget-container {
   display: flex;
   flex-direction: row;
@@ -6,13 +9,22 @@
 
 .basket-widget-text {
   font-size: 14pt;
-  line-height: 1.5;
+  margin: auto 0;
+  font-style: italic;
+  font-family: $Playfair;
+}
+
+.basket-widget-svg-container {
+  padding: 12px;
+  border-radius: 50%;
+  background-color: $black;
+  height: 24px;
+  width: 24px;
+  margin-left: 10px;
 }
 
 .basket-widget-svg {
-  height: 2em;
-  display: inline-block;
-  margin-left: 10px;
-  fill: white;
-  background-color: black;
+  fill: $gray;
+  height: 24px;
+  background-color: $black;
 }

@@ -9,6 +9,7 @@ import Basket from "./pages/Basket";
 import Listing from "./pages/Listing";
 
 import store from "./redux/createStore";
+import "./App.css";
 
 const browserHistory = createHistory();
 

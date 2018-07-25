@@ -75,6 +75,7 @@
     "@storybook/addon-links": "^3.4.8",
     "@storybook/addons": "^3.4.8",
     "@storybook/react": "^3.4.8",
+    "prop-types": "^15.6.2",
     "react-svg-loader": "^2.1.0",
     "webpack-merge": "^4.1.3"
   },
