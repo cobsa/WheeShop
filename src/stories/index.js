@@ -31,5 +31,19 @@ storiesOf("ListItem", module).add("Circle", () => (
     price={999}
   />
 ));
+storiesOf("ListItem", module).add("Square", () => (
+  <ListItem
+    name="Square"
+    description="Perfect choice when you don’t need any corners."
+    price={766}
+  />
+));
+storiesOf("ListItem", module).add("Triangle", () => (
+  <ListItem
+    name="Triangle"
+    description="Perfect choice when you don’t need any corners."
+    price={1099}
+  />
+));
 
 storiesOf("Buttons", module).add("Add to cart", () => <AddToCartButton />);
