@@ -36,7 +36,26 @@
   flex-direction: column;
   align-content: space-between;
   * {
+    align-self: flex-end;
+  }
+}
 
-  align-self: end;
+@media only screen and (max-width: 570px) {
+  .list-item-container {
+    flex-wrap: wrap;
+  }
+  .list-item-svg {
+    flex-grow: 2;
+  }
+  .divider {
+    margin: 0;
+  }
+  .price-button-divider {
+    *{
+      align-self: flex-start;
+    }
+  }
+  .list-item-container {
+    margin-bottom: 50px;
   }
 }

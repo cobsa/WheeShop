@@ -26,3 +26,13 @@
   flex-direction: row;
   margin: auto 10px;
 }
+
+@media only screen and (max-width: 570px) {
+  .cart-item-container{
+    flex-direction: column;
+  }
+  .cart-item-name, .cart-item-price, .cart-item-controls {
+    margin-bottom: 20px;
+    align-self: flex-start;
+  }
+}
