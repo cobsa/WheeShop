@@ -1,10 +1,20 @@
 @import "styles/_colors.scss";
 @import "styles/_fonts.scss";
-
+@import "styles/_reset_links.scss";
 .basket-widget-container {
   display: flex;
   flex-direction: row;
   margin: 10px;
+  color: $black;
+}
+.basket-widget-container:hover {
+  color: $pink;
+  .basket-widget-svg-container {
+    background-color: $pink;
+    .basket-widget-svg {
+      background-color: $pink;
+    }
+  }
 }
 
 .basket-widget-text {

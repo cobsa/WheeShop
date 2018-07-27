@@ -1,6 +1,6 @@
 @import "styles/_colors.scss";
 @import "styles/_fonts.scss";
-
+@import "styles/_reset_links.scss";
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -14,6 +14,7 @@
   font-family: $Pacifico;
   align-self: center;
   font-size: 36pt;
+  color: $black;
   small {
     margin-left: 1em;
     font-family: $Playfair;

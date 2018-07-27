@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import BasketWidget from "./BasketWidget/BasketWidget";
 import "./NavBar.css";
@@ -15,9 +16,11 @@ class NavBarComponent extends Component {
     return (
       <div>
         <div className="nav-container">
-          <div className="logo">
-            whee <small>The most definitive shape store in the world</small>
-          </div>
+          <Link to="/">
+            <div className="logo">
+              whee <small>The most definitive shape store in the world</small>
+            </div>
+          </Link>
           <nav className="navigation">
             <BasketWidget cartItems={this.props.cartItems} />
           </nav>
