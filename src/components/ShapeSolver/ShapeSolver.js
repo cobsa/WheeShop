@@ -14,7 +14,7 @@ export default class ShapeSolver extends Component {
     if (shape === "Circle") {
       return <Circle />;
     }
-    if (shape === "Square") {
+    if (shape === "Rectangle") {
       return <Square />;
     }
     if (shape === "Triangle") {
