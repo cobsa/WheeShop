@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ProptTypes from "prop-types";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import BasketLogo from "../../assets/shopping-cart.svg";
 import "./BasketWidgetComponent.css";
@@ -7,24 +8,29 @@ import "./BasketWidgetComponent.css";
 export default class BasketWidgetComponent extends Component {
   render() {
     const { itemCount } = this.props;
-    let text = "Multiple items in cart";
+    let text = `${itemCount} Items in cart`;
     if (itemCount === 0) {
       text = "No items in cart";
     }
     if (itemCount === 1) {
       text = "One item in cart";
     }
+    if (itemCount > 99) {
+      text = "99+ Items in cart";
+    }
     return (
-      <div className="basket-widget-container">
-        <div className="basket-widget-text">{text}</div>
-        <div className="basket-widget-svg-container">
-          <BasketLogo className="basket-widget-svg" />
+      <Link to="/cart">
+        <div className="basket-widget-container">
+          <div className="basket-widget-text">{text}</div>
+          <div className="basket-widget-svg-container">
+            <BasketLogo className="basket-widget-svg" />
+          </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }
 
 BasketWidgetComponent.propTypes = {
-  itemCount: ProptTypes.number.isRequired
+  itemCount: PropTypes.number.isRequired
 };

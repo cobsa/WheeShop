@@ -1,20 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import BasketWidget from "./BasketWidget/BasketWidget";
 import "./NavBar.css";
 
-export default () => {
-  return (
-    <div>
-      <div className="nav-container">
-        <div className="logo">
-          whee <small>The most definitive shape store in the world</small>
-        </div>
-        <nav className="navigation">
-          <BasketWidget />
-        </nav>
-      </div>
-      <div className="zig-zag" />
-    </div>
-  );
+const mapStateToProps = state => {
+  return {
+    cartItems: state.cart.cartItems
+  };
 };
+class NavBarComponent extends Component {
+  render() {
+    return (
+      <div>
+        <div className="nav-container">
+          <div className="logo">
+            whee <small>The most definitive shape store in the world</small>
+          </div>
+          <nav className="navigation">
+            <BasketWidget cartItems={this.props.cartItems} />
+          </nav>
+        </div>
+        <div className="zig-zag" />
+      </div>
+    );
+  }
+}
+
+NavBarComponent.propTypes = {
+  cartItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      count: PropTypes.number.isRequired
+    })
+  )
+};
+
+const NavBar = connect(mapStateToProps)(NavBarComponent);
+
+export default NavBar;

@@ -31,6 +31,7 @@ export default class ListItem extends Component {
 }
 
 ListItem.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,

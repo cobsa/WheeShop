@@ -1,7 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { routerReducer } from "react-router-redux";
+import { connectRouter, routerMiddleWare } from "connected-react-router";
 import thunk from "redux-thunk";
+import createHistory from "history/createBrowserHistory";
+
 import ProductReducer from "./products";
+import CartReducer from "./cart";
 
 const middlewares = [thunk];
 
@@ -12,12 +15,16 @@ if (process.env.NODE_ENV === `development`) {
   middlewares.push(logger);
 }
 
+export const history = createHistory();
+
+const rootReducer = combineReducers({
+  products: ProductReducer,
+  cart: CartReducer
+});
+
 // Add the reducer to your store on the `routing` key
 const store = createStore(
-  combineReducers({
-    routing: routerReducer,
-    products: ProductReducer
-  }),
+  connectRouter(history)(rootReducer),
   applyMiddleware(...middlewares)
 );
 

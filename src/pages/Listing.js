@@ -39,6 +39,7 @@ class ListingComponent extends Component {
       return (
         <ListItem
           key={product.id}
+          id={product.id}
           name={product.name}
           description={product.description}
           price={product.price}

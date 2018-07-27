@@ -8,7 +8,7 @@ export const initialState = {
   cartItems: []
 };
 
-export default function cartReducer(state = initialState, action = {}) {
+export default function CartReducer(state = initialState, action = {}) {
   
   // Add item
 
