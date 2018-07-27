@@ -6,7 +6,7 @@ import * as products from "./products";
 import productReducer from "./products";
 
 test("Should return initial state", () => {
-  expect(products.default()).toEqual(products.initialState);
+  expect(productReducer()).toEqual(products.initialState);
 });
 
 const mockProducts = [

@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import ListItem from "../components/ListItem/ListItem";
-import { actionCreators } from "../redux/products";
+import { actionCreators as productActionCreators } from "../redux/products";
+import { actionCreators as cartActionCreators } from "../redux/cart";
 
 const mapStateToProps = state => {
   return {
@@ -14,7 +15,10 @@ const mapStateToProps = state => {
 const mapDispatchToStore = dispatch => {
   return {
     requestProducts: () => {
-      dispatch(actionCreators.requestProducts());
+      dispatch(productActionCreators.requestProducts());
+    },
+    addItem: (id, count) => {
+      dispatch(cartActionCreators.addItem(id, count));
     }
   };
 };
@@ -38,6 +42,7 @@ class ListingComponent extends Component {
           name={product.name}
           description={product.description}
           price={product.price}
+          handleAddItem={this.props.addItem}
         />
       );
     });

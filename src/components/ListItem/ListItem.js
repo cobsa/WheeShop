@@ -21,7 +21,9 @@ export default class ListItem extends Component {
         </div>
         <div className="divider">
           <div className="list-item-price">{price} €</div>
-          <AddToCartButton />
+          <AddToCartButton
+            onClick={e => this.props.handleAddItem(this.props.id, 1)}
+          />
         </div>
       </div>
     );
@@ -31,5 +33,6 @@ export default class ListItem extends Component {
 ListItem.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired
+  price: PropTypes.number.isRequired,
+  handleAddItem: PropTypes.func.isRequired
 };
