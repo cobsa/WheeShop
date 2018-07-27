@@ -1,0 +1,28 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
+.cart-item-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-item-name {
+  font-size: 24pt;
+  font-weight: bold;
+  font-style: italic;
+  margin: auto 10px;
+}
+.cart-item-price {
+  font-size: 22pt;
+  text-align: end;
+  margin-bottom: 10px;
+  margin: auto 10px;
+}
+
+.cart-item-controls {
+  flex-grow: 1;
+  justify-content: end;
+  display: flex;
+  flex-direction: row;
+  margin: auto 10px;
+}

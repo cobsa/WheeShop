@@ -1,0 +1,17 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
+.cart-controls-button {
+  background-color: transparent;
+  border: 1px $black solid;
+  font-size: 14pt;
+  min-width: 35px;
+  color: $black;
+  max-height: 33px;
+}
+.cart-controls-button:hover {
+  color: $pink;
+  border-color: $pink;
+}
+
+

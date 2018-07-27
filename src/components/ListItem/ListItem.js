@@ -19,7 +19,7 @@ export default class ListItem extends Component {
           <div className="list-item-name">{name}</div>
           <div className="list-item-description">{description}</div>
         </div>
-        <div className="divider">
+        <div className="price-button-divider">
           <div className="list-item-price">{price} €</div>
           <AddToCartButton
             onClick={e => this.props.handleAddItem(this.props.id, 1)}

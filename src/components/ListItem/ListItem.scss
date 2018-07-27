@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: row;
   font-family: $Playfair;
+  min-height: 105px;
 }
 
 .divider {
@@ -16,6 +17,7 @@
   font-weight: bold;
   font-style: italic;
   margin-bottom: 10px;
+  text-align: start;
 }
 
 .list-item-description {
@@ -28,16 +30,13 @@
   margin-bottom: 10px;
 }
 
-.list-item-svg {
-  svg {
-    height: 100px;
-    polygon,
-    rect,
-    circle,
-    path {
-      fill: transparent;
-      stroke: $pink;
-      stroke-width: 1.5;
-    }
+.price-button-divider {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  * {
+
+  align-self: end;
   }
 }

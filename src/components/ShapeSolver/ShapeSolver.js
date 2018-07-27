@@ -12,13 +12,13 @@ export default class ShapeSolver extends Component {
   render() {
     const { shape } = this.props;
     if (shape === "Circle") {
-      return <Circle />;
+      return <Circle className="resolved-svg" />;
     }
     if (shape === "Rectangle") {
-      return <Square />;
+      return <Square className="resolved-svg" />;
     }
     if (shape === "Triangle") {
-      return <Triangle />;
+      return <Triangle className="resolved-svg" />;
     }
     return null;
   }

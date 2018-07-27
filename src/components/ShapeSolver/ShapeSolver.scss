@@ -1,0 +1,14 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
+.resolved-svg {
+  height: 100px;
+  polygon,
+  rect,
+  circle,
+  path {
+    fill: transparent;
+    stroke: $pink;
+    stroke-width: 1.5;
+  }
+}
