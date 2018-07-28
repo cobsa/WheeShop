@@ -14,14 +14,15 @@
 }
 .cart-item-price {
   font-size: 22pt;
-  text-align: end;
+text-align: end;
   margin-bottom: 10px;
   margin: auto 10px;
+  flex-grow: 2;
+
 }
 
 .cart-item-controls {
-  flex-grow: 1;
-  justify-content: end;
+  justify-content: flex-end;
   display: flex;
   flex-direction: row;
   margin: auto 10px;
@@ -30,6 +31,7 @@
 @media only screen and (max-width: 570px) {
   .cart-item-container{
     flex-direction: column;
+    width: 90vw;
   }
   .cart-item-name, .cart-item-price, .cart-item-controls {
     margin-bottom: 20px;
