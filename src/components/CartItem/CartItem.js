@@ -16,9 +16,9 @@ export default class CartItem extends Component {
         <div className="cart-item-name">{name}</div>
         <div className="cart-item-price">{price} €</div>
         <div className="cart-item-controls">
-          <CartItemButton type="-" onClick={this.props.removeItem} />
-          <CartItemTextField value={count} />
           <CartItemButton type="+" onClick={this.props.addItem} />
+          <CartItemTextField value={count} />
+          <CartItemButton type="-" onClick={this.props.removeItem} />
         </div>
       </div>
     );

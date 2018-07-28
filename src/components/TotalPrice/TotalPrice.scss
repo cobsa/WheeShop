@@ -1,0 +1,15 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
+.total-price {
+  font-size: 22pt;
+  font-family: $Playfair;
+  text-align: end;
+  h2 {
+    text-align: start;
+    font-size: 20pt;
+    font-family: $Pacifico;
+    color: $black;
+    border-bottom: 1px $pink solid;
+  }
+}

@@ -1,0 +1,10 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+@import "styles/_reset_links.scss";
+
+
+.no-items {
+  font-size: 14pt;
+  font-family: $Playfair;
+  padding: 50px;
+}
