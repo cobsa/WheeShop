@@ -9,10 +9,12 @@ export default class CartItemTextField extends Component {
       <div>
         <input
           value={this.props.value}
-          type="text"
+          type="number"
           className="cart-item-text-field"
           minLength={0}
           maxLength={3}
+          onChange={this.props.onChange}
+          min={0}
         />
       </div>
     );
@@ -20,5 +22,6 @@ export default class CartItemTextField extends Component {
 }
 
 CartItemTextField.propTypes = {
-  value: PropTypes.number.isRequired
+  value: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired
 };

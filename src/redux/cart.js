@@ -1,15 +1,15 @@
-import { cloneDeep } from "lodash";
+import { cloneDeep, remove } from "lodash";
 
 export const addItemToCartType = "cart/addItemToCart";
 export const removeItemFromCartType = "cart/removeItem";
 export const clearCartType = "cart/clearCart";
+export const setCountType = "cart/setCount";
 
 export const initialState = {
   cartItems: []
 };
 
 export default function CartReducer(state = initialState, action = {}) {
-  
   // Add item
 
   if (action.type === addItemToCartType) {
@@ -19,6 +19,7 @@ export default function CartReducer(state = initialState, action = {}) {
       if (element.id === action.payload.id) {
         return element;
       }
+      return null;
     });
     if (found) {
       // Item found
@@ -30,6 +31,10 @@ export default function CartReducer(state = initialState, action = {}) {
         count: action.payload.count
       });
     }
+
+    // Check for zeros and negative values
+    newState.cartItems = removeNegativeOrZero(newState.cartItems);
+
     return newState;
   }
 
@@ -37,25 +42,34 @@ export default function CartReducer(state = initialState, action = {}) {
 
   if (action.type === removeItemFromCartType) {
     const newState = cloneDeep(state);
-    let newCartItems = [];
     newState.cartItems.forEach(element => {
       if (element.id === action.payload.id) {
         element.count = element.count - action.payload.count;
-        if (element.count > 0) {
-          // Only add element if count's value is greater than zero
-          newCartItems.push(element);
-        }
-      } else {
-        // Let all other ids to be copied
-        newCartItems.push(element);
       }
     });
-    newState.cartItems = newCartItems;
+
+    // Check for zeros and negative values
+    newState.cartItems = removeNegativeOrZero(newState.cartItems);
+
+    return newState;
+  }
+
+  // Set count
+
+  if (action.type === setCountType) {
+    const newState = cloneDeep(state);
+    newState.cartItems.forEach(product => {
+      if (product.id === action.payload.id) {
+        product.count = action.payload.count;
+      }
+    });
+    // Check for zeros and negative values
+    newState.cartItems = removeNegativeOrZero(newState.cartItems);
     return newState;
   }
 
   // Default
-  
+
   return state;
 }
 
@@ -79,5 +93,24 @@ export const actionCreators = {
         count
       }
     };
+  },
+  setItemCount: (id, count) => {
+    return {
+      type: setCountType,
+      payload: {
+        id,
+        count
+      }
+    };
   }
+};
+
+// Helper functions
+
+const removeNegativeOrZero = array => {
+  const newArray = cloneDeep(array);
+  remove(newArray, element => {
+    return element.count <= 0;
+  });
+  return newArray;
 };

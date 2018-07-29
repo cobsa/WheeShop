@@ -9,7 +9,7 @@ import "./CartItem.css";
 
 export default class CartItem extends Component {
   render() {
-    const { name, id, count, price } = this.props;
+    const { name, count, price } = this.props;
     return (
       <div className="cart-item-container">
         <ShapeSolver shape={name} />
@@ -17,7 +17,7 @@ export default class CartItem extends Component {
         <div className="cart-item-price">{price} €</div>
         <div className="cart-item-controls">
           <CartItemButton type="+" onClick={this.props.addItem} />
-          <CartItemTextField value={count} />
+          <CartItemTextField value={count} onChange={this.props.onValueChange}/>
           <CartItemButton type="-" onClick={this.props.removeItem} />
         </div>
       </div>
@@ -31,5 +31,6 @@ CartItem.propTypes = {
   price: PropTypes.number.isRequired,
   count: PropTypes.number.isRequired,
   addItem: PropTypes.func.isRequired,
-  removeItem: PropTypes.func.isRequired
+  removeItem: PropTypes.func.isRequired,
+  onValueChange: PropTypes.func.isRequired
 };

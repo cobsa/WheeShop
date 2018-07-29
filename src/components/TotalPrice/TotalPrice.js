@@ -8,8 +8,12 @@ export default class TotalPrice extends Component {
     return (
       <div className="total-price">
         <h2>Your total</h2>
-        {this.props.price} €{" "} + Shipping
+        {this.props.price} € + Shipping
       </div>
     );
   }
 }
+
+TotalPrice.propTypes = {
+  price: PropTypes.number.isRequired
+};

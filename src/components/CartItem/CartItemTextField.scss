@@ -6,8 +6,14 @@
   padding: 5px;
   text-align: center;
   font-size: 12pt;
-  -webkit-appearance: none;
   margin: 0px 1px;
   outline: none;
   border: 1px $black solid;
+  -moz-appearance: textfield; /* Fix for Mozilla Firefox */
+}
+
+.cart-item-text-field::-webkit-inner-spin-button,
+.cart-item-text-field::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

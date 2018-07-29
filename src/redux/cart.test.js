@@ -68,5 +68,43 @@ test("Should add to items and remove one of them", () => {
     ]
   });
   mockState = cartReducer(mockState, removeSecond);
-  expect(mockState).toEqual({cartItems: []});
+  expect(mockState).toEqual({ cartItems: [] });
+});
+
+test("Should add item and then change it's value", () => {
+  const add = actionCreators.addItem(258, 1);
+  const modify = actionCreators.setItemCount(258, 36);
+  let mockState = cartReducer(undefined, add);
+  mockState = cartReducer(mockState, modify);
+  expect(mockState).toEqual({
+    cartItems: [
+      {
+        id: 258,
+        count: 36
+      }
+    ]
+  });
+});
+
+test("Should return same state", () => {
+  const add = actionCreators.addItem(35, 1);
+  const modifyElse = actionCreators.setItemCount(23, 45);
+  let mockState = cartReducer(undefined, add);
+  mockState = cartReducer(mockState, modifyElse);
+  expect(mockState).toEqual({
+    cartItems: [
+      {
+        id: 35,
+        count: 1
+      }
+    ]
+  });
+});
+
+test("Should remove items with negative count", () => {
+  const add = actionCreators.addItem(2, 1);
+  const modifyNegative = actionCreators.setItemCount(2, -58);
+  let mockState = cartReducer(undefined, add);
+  mockState = cartReducer(mockState, modifyNegative);
+  expect(mockState).toEqual({ cartItems: [] });
 });

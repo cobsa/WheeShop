@@ -66,11 +66,12 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "node scripts/build.js",
     "build": "npm-run-all build-css build-js",
-    "test": "jest",
+    "test": "jest --coverage",
     "test-watch": "jest --watch",
     "storybook-js": "start-storybook -p 9009 -s public",
     "storybook": "npm-run-all -p watch-css storybook-js",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.8",
@@ -88,6 +89,10 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/stories/"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"

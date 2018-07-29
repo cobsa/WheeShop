@@ -23,11 +23,27 @@ const mapDispatchToProps = dispatch => {
     },
     removeItem: (id, count) => {
       dispatch(actionCreators.removeItem(id, count));
+    },
+    setItemCount: (id, count) => {
+      dispatch(actionCreators.setItemCount(id, count));
     }
   };
 };
 
 class CartComponent extends Component {
+  constructor() {
+    super();
+    this.handleValueChange = this.handleValueChange.bind(this);
+  }
+
+  handleValueChange(id, value) {
+    // Check that value is valid number
+    const validRegex = new RegExp(/[0-9]/g);
+    if (validRegex.test(value) && typeof value === "number") {
+      console.log(typeof value);
+      this.props.setItemCount(id, value);
+    }
+  }
   render() {
     const { cartItems, products } = this.props;
     let CartItems;
@@ -45,6 +61,9 @@ class CartComponent extends Component {
             count={product.count}
             addItem={e => this.props.addItem(product.id, 1)}
             removeItem={e => this.props.removeItem(product.id, 1)}
+            onValueChange={e =>
+              this.handleValueChange(product.id, parseInt(e.target.value,10))
+            }
           />
         );
       });
