@@ -46,6 +46,8 @@
   }
   .list-item-svg {
     flex-grow: 2;
+    display: flex;
+    justify-content: center;
   }
   .divider {
     margin: 0;
