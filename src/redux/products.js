@@ -29,7 +29,14 @@ export const actionCreators = {
   requestProducts: () => async (dispatch, getState) => {
     dispatch({ type: requestProductsType });
 
-    const url = "api/products/"; // Set to read from .evn file in development
+    let url;
+    if (process.env.NODE_ENV === "production") {
+      // Production
+      url = process.env.REACT_APP_PROD_BACKEND;
+    } else {
+      // test&development
+      url = "api/products/";
+    }
     const response = await fetch(url);
     const products = await response.json();
 

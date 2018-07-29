@@ -10,6 +10,7 @@ const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 const eslintFormatter = require("react-dev-utils/eslintFormatter");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const paths = require("./paths");
 const getClientEnvironment = require("./env");
 
@@ -46,6 +47,16 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {};
 
+// Configure Clean Webpack plugin
+
+const pathsToClean = ["build"];
+
+const cleanOptions = {
+  root: paths.appBuild,
+  verbose: true,
+  dry: false,
+  allowExternal: false
+};
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -244,6 +255,8 @@ module.exports = {
     ]
   },
   plugins: [
+    // Cleans /dist folder
+    new CleanWebpackPlugin(pathsToClean, cleanOptions),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
