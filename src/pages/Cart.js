@@ -9,6 +9,10 @@ import TotalPrice from "../components/TotalPrice/TotalPrice";
 
 import "./Cart.css";
 
+/* 
+  Cart-page container.
+*/
+
 const mapStateToProps = state => {
   return {
     cartItems: state.cart.cartItems,
@@ -59,15 +63,17 @@ class CartComponent extends Component {
             name={product.name}
             price={product.price}
             count={product.count}
+            description={product.description}
             addItem={e => this.props.addItem(product.id, 1)}
             removeItem={e => this.props.removeItem(product.id, 1)}
             onValueChange={e =>
-              this.handleValueChange(product.id, parseInt(e.target.value,10))
+              this.handleValueChange(product.id, parseInt(e.target.value, 10))
             }
           />
         );
       });
-      // Calculate total cost
+
+      // Calculate total price
 
       productsInBasket.forEach(product => {
         totalPrice += product.price * product.count;

@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 
 import "./CartItemTextField.css";
 
+
+/* 
+  Displays number of items in cart. Also works as input for modifying the count of items in cart.
+*/
+
 export default class CartItemTextField extends Component {
   render() {
     return (

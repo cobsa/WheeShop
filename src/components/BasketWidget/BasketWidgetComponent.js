@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import BasketLogo from "../../assets/shopping-cart.svg";
 import "./BasketWidgetComponent.css";
 
+/* 
+  Basket widget for navbar, displays amount of items in basket.
+*/
+
 export default class BasketWidgetComponent extends Component {
   render() {
     const { itemCount } = this.props;

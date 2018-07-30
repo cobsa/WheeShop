@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import BasketWidget from "./BasketWidget/BasketWidget";
 import "./NavBar.css";
 
+/* 
+  Displays navbar. Also connects to store to get item count for BasketWidget.
+*/
+
 const mapStateToProps = state => {
   return {
     cartItems: state.cart.cartItems

@@ -1,0 +1,8 @@
+@import "styles/_colors.scss";
+@import "styles/_fonts.scss";
+
+.cart-controls {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+}

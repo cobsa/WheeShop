@@ -6,6 +6,11 @@ import ListItem from "../components/ListItem/ListItem";
 import { actionCreators as productActionCreators } from "../redux/products";
 import { actionCreators as cartActionCreators } from "../redux/cart";
 
+
+/* 
+  Listing page -container.
+*/
+
 const mapStateToProps = state => {
   return {
     products: state.products
@@ -43,7 +48,7 @@ class ListingComponent extends Component {
           name={product.name}
           description={product.description}
           price={product.price}
-          handleAddItem={this.props.addItem}
+          addItem={e => this.props.addItem(product.id, 1)}
         />
       );
     });

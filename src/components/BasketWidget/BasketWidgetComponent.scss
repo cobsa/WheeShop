@@ -1,6 +1,8 @@
 @import "styles/_colors.scss";
 @import "styles/_fonts.scss";
 @import "styles/_reset_links.scss";
+@import "styles/_variables.scss";
+
 .basket-widget-container {
   display: flex;
   flex-direction: row;
@@ -22,7 +24,7 @@
   margin: auto 0;
   font-style: italic;
   font-family: $Playfair;
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: $tiny-breakpoint) {
     display: none;
   }
 }

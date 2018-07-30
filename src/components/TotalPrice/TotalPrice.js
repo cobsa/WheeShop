@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 
 import "./TotalPrice.css";
 
+/* 
+  Displays total price of items in cart.
+*/
+
 export default class TotalPrice extends Component {
   render() {
     return (

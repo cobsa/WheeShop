@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 
 import "./CartItemButton.css";
 
+/* 
+  Button to match CartItemTextField
+*/
+
 export default class CartItemButton extends Component {
   render() {
     return (

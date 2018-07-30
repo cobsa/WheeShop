@@ -1,5 +1,8 @@
+@import "styles/_variables.scss";
+
 .content-container {
-  display: flex;
   justify-content: center;
-  margin: 20px 20px 100px 20px;
+  max-width: $max-content-width;
+  width: 90vw;
+  margin: 50px auto;
 }

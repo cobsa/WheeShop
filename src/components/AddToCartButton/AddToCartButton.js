@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 
 import "./AddToCartButton.css";
 
+/* 
+  Add to cart button implementation.
+*/
+
 export default class AddToCartButton extends Component {
   render() {
     return (

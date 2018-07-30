@@ -7,10 +7,9 @@ import { MemoryRouter } from "react-router";
 
 import BasketWidgetComponent from "../components/BasketWidget/BasketWidgetComponent";
 import ListItem from "../components/ListItem/ListItem";
-import AddToCartButton from "../components/AddToCartButton/AddToCartButton";
 import CartItem from "../components/CartItem/CartItem";
-import CartItemButton from "../components/CartItem/CartItemButton";
-import CartItemTextField from "../components/CartItem/CartItemTextField";
+import AddToCartButton from "../components/AddToCartButton/AddToCartButton";
+import CartControls from "../components/CartControls/CartControls";
 
 storiesOf("BasketWidget", module).add("No items", () => (
   <MemoryRouter>
@@ -41,6 +40,7 @@ storiesOf("ListItem", module).add("Circle", () => (
     name="Circle"
     description="Perfect choice when you don’t need any corners."
     price={999}
+    addItem={action}
   />
 ));
 storiesOf("ListItem", module).add("Rectangle", () => (
@@ -48,6 +48,7 @@ storiesOf("ListItem", module).add("Rectangle", () => (
     name="Rectangle"
     description="For once, it’s a great idea to think inside the box."
     price={766}
+    addItem={action}
   />
 ));
 storiesOf("ListItem", module).add("Triangle", () => (
@@ -55,6 +56,7 @@ storiesOf("ListItem", module).add("Triangle", () => (
     name="Triangle"
     description="A true classic with three elegant corners."
     price={1099}
+    addItem={action}
   />
 ));
 storiesOf("ListItem", module).add("All", () => {
@@ -79,24 +81,25 @@ storiesOf("ListItem", module).add("All", () => {
   );
 });
 
-storiesOf("Buttons", module).add("Add to cart", () => <AddToCartButton />);
-
-storiesOf("CartItem", module).add("Default item", () => (
+storiesOf("CartItem", module).add("Circle", () => (
   <CartItem
-    id={1}
-    name="Rectangle"
-    count={2}
+    name="Circle"
+    description="Perfect choice when you don’t need any corners."
     price={999}
+    count={2}
     addItem={action}
     removeItem={action}
+    onValueChange={action}
   />
 ));
-storiesOf("CartItem", module).add("+ Button", () => (
-  <CartItemButton type="+" onClick={action} />
-));
-storiesOf("CartItem", module).add("- Button", () => (
-  <CartItemButton type="-" onClick={action} />
-));
-storiesOf("CartItem", module).add("TextField", () => (
-  <CartItemTextField value={23} onChange={action} />
+
+storiesOf("Buttons", module).add("Add to cart", () => <AddToCartButton />);
+
+storiesOf("Cart-controls", module).add("Cart controls", () => (
+  <CartControls
+    addItem={action}
+    removeItem={action}
+    onValueChange={action}
+    count={2}
+  />
 ));

@@ -1,8 +1,10 @@
 @import "styles/_colors.scss";
 @import "styles/_fonts.scss";
+@import "styles/_variables.scss";
 
 .resolved-svg {
-  height: 100px;
+  height: 125px;
+  width: 125px;
   polygon,
   rect,
   circle,
@@ -13,7 +15,7 @@
   }
 }
 
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: $mobile-breakpoint) {
   .resolved-svg {
     width: 70vw;
     height: 70vw;

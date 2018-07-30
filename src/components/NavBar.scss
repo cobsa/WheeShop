@@ -1,6 +1,8 @@
 @import "styles/_colors.scss";
 @import "styles/_fonts.scss";
 @import "styles/_reset_links.scss";
+@import "styles/_variables.scss";
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -19,7 +21,7 @@
     margin-left: 1em;
     font-family: $Playfair;
     font-size: 14pt;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: $logo-breakpoint) {
       display: none;
     }
   }

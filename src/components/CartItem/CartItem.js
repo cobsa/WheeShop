@@ -1,33 +1,35 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import ShapeSolver from "../ShapeSolver/ShapeSolver";
-import CartItemButton from "./CartItemButton";
-import CartItemTextField from "./CartItemTextField";
+import BaseItem from "../BaseItem/BaseItem";
+import CartControls from "../CartControls/CartControls";
 
-import "./CartItem.css";
+
+/* 
+  Wrapper for Cart-page. Displays item info and render buttons for controlling item count.
+*/
 
 export default class CartItem extends Component {
   render() {
-    const { name, count, price } = this.props;
+    const { name, description, price, count } = this.props;
     return (
-      <div className="cart-item-container">
-        <ShapeSolver shape={name} />
-        <div className="cart-item-name">{name}</div>
-        <div className="cart-item-price">{price} €</div>
-        <div className="cart-item-controls">
-          <CartItemButton type="+" onClick={this.props.addItem} />
-          <CartItemTextField value={count} onChange={this.props.onValueChange}/>
-          <CartItemButton type="-" onClick={this.props.removeItem} />
-        </div>
+      <div>
+        <BaseItem name={name} description={description} price={price}>
+          <CartControls
+            count={count}
+            addItem={this.props.addItem}
+            removeItem={this.props.removeItem}
+            onValueChange={this.props.onValueChange}
+          />
+        </BaseItem>
       </div>
     );
   }
 }
 
 CartItem.propTypes = {
-  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   count: PropTypes.number.isRequired,
   addItem: PropTypes.func.isRequired,
