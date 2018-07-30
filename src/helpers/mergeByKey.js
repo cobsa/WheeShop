@@ -1,5 +1,5 @@
 /* 
-  Merges two arrays of object by key. Only returns cells that have data in both
+  Merges two arrays of object by common key-value pair. Only returns cells that have data in both
   arrays.
 */
 

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   background-color: $gradient-start;
-  padding-top: 20px;
+  padding: 20px 10px 0px 10px;
   margin-bottom: -10px;
 }
 
@@ -25,7 +25,7 @@
   }
 }
 
-/* Zig-zag  */
+/* Zig-zag pattern */
 
 $height: 64px;
 
