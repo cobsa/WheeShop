@@ -44,7 +44,6 @@ class CartComponent extends Component {
     // Check that value is valid number
     const validRegex = new RegExp(/[0-9]/g);
     if (validRegex.test(value) && typeof value === "number") {
-      console.log(typeof value);
       this.props.setItemCount(id, value);
     }
   }
