@@ -6,7 +6,7 @@ import ShapeSolver from "../ShapeSolver/ShapeSolver";
 import "./BaseItem.css";
 
 /* 
-  Default component for list items.
+  Default base component for list items.
 */
 
 

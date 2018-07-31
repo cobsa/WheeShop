@@ -10,7 +10,8 @@ import Triangle from "../../assets/shapes/triangle.svg";
 
 
 /* 
-  Displays correct shape. TODO: Implement smarter way to get shape from name. 
+  Displays correct shape. 
+  TODO: Implement smarter way to get shape from name. Scan /assets/shapes/ folder and match shape to .svg filename
 */
 
 export default class ShapeSolver extends Component {
