@@ -34,7 +34,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class CartComponent extends Component {
+export class CartComponent extends Component {
   constructor() {
     super();
     this.handleValueChange = this.handleValueChange.bind(this);
@@ -42,7 +42,7 @@ class CartComponent extends Component {
 
   handleValueChange(id, value) {
     // Check that value is valid number
-    const validRegex = new RegExp(/[0-9]/g);
+    const validRegex = new RegExp(/^\d+$/g);
     if (validRegex.test(value) && typeof value === "number") {
       this.props.setItemCount(id, value);
     }
